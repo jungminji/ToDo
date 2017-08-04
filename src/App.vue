@@ -1,22 +1,16 @@
-<template>
-  <div id="app">
-    <img src="./assets/logo.png">
-    <h1>{{ msg }}</h1>
-    <h2>Essential Links</h2>
-    <ul>
-      <li><a href="https://vuejs.org" target="_blank">Core Docs</a></li>
-      <li><a href="https://forum.vuejs.org" target="_blank">Forum</a></li>
-      <li><a href="https://gitter.im/vuejs/vue" target="_blank">Gitter Chat</a></li>
-      <li><a href="https://twitter.com/vuejs" target="_blank">Twitter</a></li>
-    </ul>
-    <h2>Ecosystem</h2>
-    <ul>
-      <li><a href="http://router.vuejs.org/" target="_blank">vue-router</a></li>
-      <li><a href="http://vuex.vuejs.org/" target="_blank">vuex</a></li>
-      <li><a href="http://vue-loader.vuejs.org/" target="_blank">vue-loader</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" target="_blank">awesome-vue</a></li>
-    </ul>
-  </div>
+<template lang="pug">
+  #app
+    section.hero.is-primary
+      .hero-body
+        .container
+          .columns.is-multiline.is-mobile
+            .column.is-full-mobile.is-full-tablet.is-3-desktop
+              h1.title To-do's
+            .column.is-8-mobile.is-9-tablet.is-7-desktop.is-offset-1-mobile.is-offset-1-tablet.no-offset-desktop
+              input(type="text").input
+            .column.is-1-mobile.is-2-tablet.is-2-desktop
+              button.button.is-primary.is-outlined.is-inverted Apply
+
 </template>
 
 <script>
@@ -30,31 +24,21 @@ export default {
 }
 </script>
 
-<style lang="scss">
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style lang="sass">
+@import '../node_modules/bulma/bulma.sass'
 
-h1, h2 {
-  font-weight: normal;
-}
+.hero-body
+  padding: 3rem 0
 
-ul {
-  list-style-type: none;
-  padding: 0;
-}
+.title
+  text-align: center
 
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
++desktop
+  .title
+    text-align: right
+  .no-offset-desktop
+    margin-left: 0 !important
+  .is-3-desktop
+    width: 22.5% !important
 
-a {
-  color: #42b983;
-}
 </style>
