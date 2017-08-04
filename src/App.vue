@@ -11,9 +11,9 @@
             .column.is-1-mobile.is-2-tablet.is-2-desktop
               button.button.is-primary.is-outlined.is-inverted Apply
     section.todo-list
-      .columns
-        .column
-        .column
+      .columns.is-multiline.is-mobile
+        .column.is-10-mobile.is-10-tablet.is-4-desktop.is-offset-1-mobile.is-offset-1-tablet.is-offset-2-desktop asd
+        .column.is-10-mobile.is-10-tablet.is-offset-1-mobile.is-offset-1-tablet.is-4-desktop asd
 
 </template>
 
@@ -44,6 +44,14 @@ export default {
 
 .input
   color: rgba(46, 211, 213, 1)
+  font-weight: bold
+
++mobile
+  .title
+    font-size: 60px
++tablet
+  .title
+    font-size: 55px
 
 +desktop
   .title
