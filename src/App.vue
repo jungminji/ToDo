@@ -4,12 +4,12 @@
       .hero-body
         .container
           .columns.is-multiline.is-mobile
-            .column.is-full-mobile.is-full-tablet.is-3-desktop
-              h1.title To-do's
-            .column.is-8-mobile.is-9-tablet.is-7-desktop.is-offset-1-mobile.is-offset-1-tablet.no-offset-desktop
-              input(type="text").input
-            .column.is-1-mobile.is-2-tablet.is-2-desktop
-              button.button.is-primary.is-outlined.is-inverted Apply
+            .column.is-full-mobile.is-full-tablet.is-3-desktop.todo-title-pad-fix.todo-3-desktop
+              h1.title.todo-title To-do's
+            .column.is-8-mobile.is-9-tablet.is-7-desktop.is-offset-1-mobile.todo-input-pad-fix.is-offset-todolist-mobile.todolist-input-offset.todo-no-offset-desktop
+              input(type="text").input.todo-input
+            .column.is-1-mobile.is-2-tablet.is-2-desktop.todo-btn-pad-fix
+              button.button.is-primary.is-outlined.is-inverted.todo-apply-btn Apply
     section.todo-list
       .columns.is-multiline.is-mobile
         .column.is-10-mobile.is-10-tablet.is-4-desktop.is-offset-1-mobile.is-offset-1-tablet.is-offset-todolist-desktop
@@ -43,23 +43,30 @@ export default {
 </script>
 
 <style lang="sass">
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans')
 @import '../node_modules/bulma/bulma.sass'
+@import './assets/sass/mobile'
+@import './assets/sass/tablet'
+@import './assets/sass/desktop'
+
+*
+  font-family: 'Noto Sans', sans-serif
 
 .is-mint
-  background-color: rgba(46, 211, 213, 1)
-  box-shadow: 0px 2px 8px 1px #777
+  background-color: #2ed3d5
+  box-shadow: 0 5px 10px 0 rgba(109, 103, 103, 0.5)
 
-.hero-body
-  padding: 3rem 0
 
+
+// Header items
 .title
   color: #fff
-  text-align: center
 
-.input
+.todo-input
   color: rgba(46, 211, 213, 1)
-  font-weight: bold
 
+
+// List : Check later
 .todo-list
   margin-top: 70px
   h2
@@ -68,23 +75,5 @@ export default {
   table
     width: 100%
     border-top: 4px solid #dbdbdb
-
-
-+mobile
-  .title
-    font-size: 60px
-+tablet
-  .title
-    font-size: 55px
-
-+desktop
-  .title
-    text-align: right
-  .no-offset-desktop
-    margin-left: 0 !important
-  .is-3-desktop
-    width: 22.5% !important
-  .column.is-offset-todolist-desktop
-    margin-left: 9.83%
 
 </style>
