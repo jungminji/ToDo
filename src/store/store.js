@@ -3,26 +3,32 @@ import Vuex from 'vuex'
 
 Vue.use(Vuex)
 
-// Copied from Cremonth. You will have to modify for todolist
-
 export default new Vuex.Store({
   state: {
-    amount: '',
-    month: 0,
-    rate: 0
+    task: [],
+    complete: []
   },
   mutations: {
-    SET_AMOUNT (state, payload) {
-      state.amount = payload
+    ADD_TASK (state, payload) {
+      state.task.push(payload)
     },
-    SET_MONTH (state, payload) {
-      state.month = payload
+    REMOVE_TASK (state, payload) {
     },
-    SET_RATE (state, payload) {
-      state.rate = payload
+    ADD_COMPLETE (state, playload) {
+      state.task.push(payload)
+    },
+    REMOVE_COMPLETE (state, payload) {
     }
   },
   actions: {
+    finishTask (context, payload) {
+      content.commit('REMOVE_TASK')
+    },
+    undoComplete (context, payload) {
+    },
+    removeTodo (context, payload) {
+    },
+    // Remove below later
     updateAmount (context, payload) {
       context.commit('SET_AMOUNT', parseInt(payload.amount, 10))
     },

@@ -12,8 +12,22 @@
               button.button.is-primary.is-outlined.is-inverted Apply
     section.todo-list
       .columns.is-multiline.is-mobile
-        .column.is-10-mobile.is-10-tablet.is-4-desktop.is-offset-1-mobile.is-offset-1-tablet.is-offset-2-desktop asd
-        .column.is-10-mobile.is-10-tablet.is-offset-1-mobile.is-offset-1-tablet.is-4-desktop asd
+        .column.is-10-mobile.is-10-tablet.is-4-desktop.is-offset-1-mobile.is-offset-1-tablet.is-offset-todolist-desktop
+          h2 Task
+          table.table.task-list
+            thead
+            tfoot
+            tbody
+              tr(v-for="n in 10")
+                td {{n}}
+        .column.is-10-mobile.is-10-tablet.is-offset-1-mobile.is-offset-1-tablet.is-4-desktop
+          h2 Completed
+          table.table.completed-list
+            thead
+            tfoot
+            tbody
+              tr(v-for="n in 10")
+                td {{n}}
 
 </template>
 
@@ -46,6 +60,16 @@ export default {
   color: rgba(46, 211, 213, 1)
   font-weight: bold
 
+.todo-list
+  margin-top: 70px
+  h2
+    font-size: 35px
+    font-weight: bold
+  table
+    width: 100%
+    border-top: 4px solid #dbdbdb
+
+
 +mobile
   .title
     font-size: 60px
@@ -60,5 +84,7 @@ export default {
     margin-left: 0 !important
   .is-3-desktop
     width: 22.5% !important
+  .column.is-offset-todolist-desktop
+    margin-left: 9.83%
 
 </style>
