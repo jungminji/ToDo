@@ -4,15 +4,15 @@
       .hero-body
         .container
           .columns.is-multiline.is-mobile
-            .column.is-full-mobile.is-full-tablet.is-3-desktop.todo-title-pad-fix.todo-3-desktop
+            .column.is-full-mobile.is-full-tablet.is-3-desktop.todo-title-padding.todo-title-width-desktop
               h1.title.todo-title To-do's
-            .column.is-8-mobile.is-9-tablet.is-7-desktop.is-offset-1-mobile.todo-input-pad-fix.is-offset-todolist-mobile.todolist-input-offset.todo-no-offset-desktop
+            .column.is-8-mobile.is-9-tablet.is-7-desktop.is-offset-1-mobile.todo-input-padding-mobile.todo-input-offset-desktop.todo-input-offset-tablet.todo-title-no-offset-desktop
               input(type="text").input.todo-input
-            .column.is-1-mobile.is-2-tablet.is-2-desktop.todo-btn-pad-fix
+            .column.is-1-mobile.is-2-tablet.is-2-desktop.todo-btn-padding
               button.button.is-primary.is-outlined.is-inverted.todo-apply-btn Apply
     section.todo-list
       .columns.is-multiline.is-mobile
-        .column.is-10-mobile.is-10-tablet.is-4-desktop.is-offset-1-mobile.is-offset-1-tablet.is-offset-todolist-desktop
+        .column.is-10-mobile.is-10-tablet.is-4-desktop.is-offset-1-mobile.is-offset-1-tablet.todolist-offset-desktop
           h2 Task
           table.table.task-list
             thead
