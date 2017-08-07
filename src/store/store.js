@@ -6,28 +6,31 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     task: [],
-    complete: []
+    completed: []
   },
   mutations: {
+    TRUNCATE_LIST (state, payload = []) {
+      state.task = payload
+      state.completed = payload
+    },
     ADD_TASK (state, payload) {
       state.task.push(payload)
     },
-    REMOVE_TASK (state, payload) {
-    },
-    ADD_COMPLETE (state, playload) {
-      state.task.push(payload)
-    },
-    REMOVE_COMPLETE (state, payload) {
+    ADD_COMPLETED (state, payload) {
+      state.completed.push(payload)
     }
   },
   actions: {
-    finishTask (context, payload) {
-      content.commit('REMOVE_TASK')
+    truncateList (context) {
+      context.commit('TRUNCATE_LIST')
     },
-    undoComplete (context, payload) {
+    addTask (context, payload) {
+      context.commit('ADD_TASK', payload)
     },
-    removeTodo (context, payload) {
+    addCompleted (context, payload) {
+      context.commit('ADD_COMPLETED', payload)
     },
+
     // Remove below later
     updateAmount (context, payload) {
       context.commit('SET_AMOUNT', parseInt(payload.amount, 10))
@@ -40,6 +43,13 @@ export default new Vuex.Store({
     }
   },
   getters: {
+    getTask (state) {
+      return state.task
+    },
+    getCompleted (state) {
+      return state.completed
+    },
+    // Remove below later
     getAmount (state) {
       return state.amount
     },
