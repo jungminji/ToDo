@@ -35,7 +35,6 @@
 <script>
 import firebase from 'firebase'
 import { mapActions, mapGetters } from 'vuex'
-// import Icon from 'vue-awesome/components/Icon'
 
 export default {
   name: 'app',
