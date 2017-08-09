@@ -20,6 +20,8 @@
             tbody
               tr(v-for="(item, index) in getTask")
                 td {{ item.content }}
+                  icon(name="pencil")
+                  icon(name="remove")
         .column.is-10-mobile.is-10-tablet.is-offset-1-mobile.is-offset-1-tablet.is-4-desktop
           h2 Completed
           table.table.completed-list
@@ -28,6 +30,8 @@
             tbody
               tr(v-for="(item, index) in getCompleted")
                 td {{ item.content }}
+                  icon(name="reply")
+                  icon(name="remove")
     footer.footer
       p Special thanks to MK, Moon for designing my ugly todolist.
 </template>
@@ -120,8 +124,6 @@ $primaryColor: #2ED3D5
 .is-mint
   background-color: $primaryColor
   box-shadow: 0 5px 10px 0 rgba(109, 103, 103, 0.5)
-
-
 
 // Header items
 .title
